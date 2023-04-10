@@ -30,18 +30,18 @@ export class AppComponent {
 
 		setTimeout(() => {
 			this.isPopupOpened = true;
-		}, 3000);
+		}, 1000);
 
 		setTimeout(() => {
 			this.isPopupOpened = false;
-		}, 6000);
+		}, 2000);
 
 		setTimeout(() => {
 			this.isPopupOpened = true;
-		}, 9000);
+		}, 3000);
 
 		setTimeout(() => {
-			this.isPopupOpened = false;
-		}, 12000);
+			//this.isPopupOpened = false;
+		}, 4000);
 	}
 }
