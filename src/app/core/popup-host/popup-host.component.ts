@@ -16,6 +16,7 @@ import {
 export class PopupHostComponent {
 	@Input() template: TemplateRef<unknown> | null = null;
 
+	//получение шаблона по шаблонной переменной viewport
 	@ViewChild('viewport', {read: ViewContainerRef, static: true})
 	private viewportViewContainer!: ViewContainerRef;
 
