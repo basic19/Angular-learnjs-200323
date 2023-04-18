@@ -8,7 +8,6 @@ import {productMock} from '../../../shared/products/product.mock';
 })
 export class CardComponent {
 	readonly product = productMock;
-	event: any;
 	onClick(event: Event) {
 		event.stopPropagation();
 		alert('Планшет куплен.');
