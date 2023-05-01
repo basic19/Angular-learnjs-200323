@@ -1,14 +1,15 @@
 import {Pipe, PipeTransform} from '@angular/core';
+import {IProduct} from '../products/product.interface';
 
 @Pipe({
 	name: 'filterByPrice',
 })
 export class FilterByPricePipe implements PipeTransform {
-	transform(
-		items: any[] | undefined | null,
-		searchingProperty: string,
-		searchValueMin: number | null,
-		searchValueMax: number | null,
+	transform<T, P extends keyof T>(
+		items: T[] | undefined | null,
+		searchingProperty: P,
+		searchValueMin: T[P] | null,
+		searchValueMax: T[P] | null,
 	) {
 		if (!items?.length) {
 			return items;
@@ -27,11 +28,6 @@ export class FilterByPricePipe implements PipeTransform {
 		if (searchValueMax) {
 			return items.filter(item => item[searchingProperty] < searchValueMax);
 		}
-
-		if (!searchValueMin && !searchValueMax) {
-			return items;
-		}
-
 		return items;
 	}
 }
